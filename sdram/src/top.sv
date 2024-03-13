@@ -199,7 +199,7 @@ end
 
 wire sdram_clk_p;
 
-PLL100 SDRAM_PLL(
+Gowin_PLL SDRAM_PLL(
     .clkout0(clk_133M), //output clkout0
     .clkout1(sdram_clk_p),
     .clkout2(aux_clk),
