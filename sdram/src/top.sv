@@ -23,7 +23,7 @@ wire sdram_init_fin;
 
 `include "print.svh"
 defparam tx.uart_freq = 115200;
-defparam tx.clk_freq = 133333000;
+defparam tx.clk_freq = 100333000;
 
 assign txp = uart_txp;
 assign print_clk = clk_133M;
@@ -86,7 +86,7 @@ always@(posedge clk_133M or negedge sdram_init_fin)begin
         case(test_status)
             4'd0:begin
                 wr_en <= 1'b1;
-                wr_data <= 16'hAAAA;
+                wr_data <= 16'haaaa;
                 wr_mask <= 2'b00;
                 test_status <= 4'd1;
                 `print("\x0d\nWrite aaaa ffff 0000 to ram0. \x0d\nWrite 5555 0000 ffff to ram1.",STR);
